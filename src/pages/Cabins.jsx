@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 import Button from "../ui/Button";
 import { getCabins } from "../services/apiCabins";
 import CabinTable from "../features/cabins/CabinTable";
-// import CreateCabinFormaltAlt from "../features/cabins/CreateCabinFormAlt";
-import CreateCabinFormAlt from "../features/cabins/CreateCabinFormalt";
+//import CreateCabinFormAlt from "../features/cabins/CreateCabinFormalt";
 import CreateCabinForm from "../features/cabins/CreateCabinForm";
 function Cabins() {
   const [showForm, setShowForm] = useState(false);

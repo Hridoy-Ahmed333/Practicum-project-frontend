@@ -65,6 +65,7 @@ export async function addCabins(newCabin) {
 // }
 
 export async function addCabin(formData) {
+  console.log(formData);
   try {
     const response = await fetch("http://localhost:5050/cabins", {
       method: "POST",
@@ -73,6 +74,25 @@ export async function addCabin(formData) {
 
     if (!response.ok) {
       throw new Error(`Cabin could not be created: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function updateCabin(formData, id) {
+  console.log(formData);
+  try {
+    const response = await fetch(`http://localhost:5050/cabins/${id}`, {
+      method: "PATCH",
+      body: formData, // Send FormData directly
+    });
+
+    if (!response.ok) {
+      throw new Error(`Cabin could not be Edited: ${response.statusText}`);
     }
 
     const data = await response.json();
